@@ -7,8 +7,8 @@ import time
 tcp = socket.socket()
 tcp.bind(('',55555))
 
-addresses = ['192.168.1.5', '192.168.1.10', '192.168.1.28', '192.168.1.14']
-me = '192.168.1.5'
+addresses = ['192.168.1.18', '192.168.1.4', '192.168.1.17', '192.168.1.16']
+me = '192.168.1.18'
 
 index = addresses.index(me)
 num = len(addresses)
