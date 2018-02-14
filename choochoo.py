@@ -7,8 +7,8 @@ import time
 tcp = socket.socket()
 tcp.bind(('',55555))
 
-addresses = ['192.168.1.5', '192.168.1.10', '192.168.1.18', '192.168.1.16', '192.168.1.17', '192.168.1.4', '192.168.1.28', '192.168.1.18']
-me = '192.168.1.5'
+addresses = ['146.163.48.128', '146.163.115.139']
+me = '146.163.48.128'
 
 index = addresses.index(me)
 num = len(addresses)
@@ -25,11 +25,14 @@ def send(start = False):
 	print data
 	c.close()
 
-if len(sys.argv) == 2 and sys.argv[1] == 'start':
-	send(True)
 
 print 'Listening'
 tcp.listen(1000)
+
+if len(sys.argv) == 2 and sys.argv[1] == 'start':
+	send(True)
+
+
 while True:
 	connection, address = tcp.accept()
 	data = connection.recv(1024)
